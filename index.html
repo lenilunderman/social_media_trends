@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Social Media | Data Arrays </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="//use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+  <!-- heading section -->
+  <section class="heading-section has-background-yellow section">
+      <div class="container py-6 ">
+         <h1 class="title is-1 is-size-2-mobile has-text-centered-mobile"> The Social Media Trends</h1> 
+      </div>
+  </section>
+  <!-- section for the table and form -->
+  <section class="section">
+      <div class="container">
+          <div class="columns has-text-centered">
+            <div class="column is-one-third btn-controls">
+                <div class="buttons-section has-text-left has-text-centered-mobile">
+                    <p class="my-3 add-users">
+                        <button class="button is-yellow is-outlined" id="add-users-btn">
+                            <span class="icon">
+                                <i class="fas fa-users"></i>
+                            </span>
+                            <span>Check out users </span>
+                          </button>
+                    </p>
+                    <p class="my-3 check-views">
+                        <button class="button is-yellow is-outlined" id="multipleUser-btn">
+                            <span class="icon">
+                                <i class="fas fa-chart-line"></i>
+                            </span>
+                            <span>Trends views for next week</span>
+                          </button>
+                    </p>
+                    <p class="my-3 over-250">
+                        <button class="button is-yellow is-outlined" id="search-btn">
+                            <span class="icon">
+                                <i class="fas fa-satellite-dish"></i>
+                            </span>
+                            <span>Channels over 250k</span>
+                          </button>
+                    </p>
+                    <p class="my-3 calculate-view">
+                        <button class="button is-yellow is-outlined" id="calculateUser-btn">
+                            <span class="icon">
+                                <i class="fas fa-calculator"></i>
+                            </span>
+                            <span>Calculate all viewership</span>
+                          </button>
+                    </p>
+                </div>
+                  
+            </div>
+            <div class="column">
+                <div class="columns">
+                    <!-- table -->
+                    <table class="table is-fullwidth table is-hoverable table-info">
+                        <thead>
+                            <tr>
+                              <th title="Channel Name" class="has-text-left"> Channel Name </th>
+                              <th title="View per week" class="has-text-right"> View per week </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="has-text-left cname"> The Bulma Application </td>
+                                <td class="has-text-right cview"> 457.014 k</td>
+                            </tr>
+                            <tr>
+                                <td class="has-text-left cname"> The CSS Dojo </td>
+                                <td class="has-text-right cview"> 134.356 k </td>
+                            </tr>
+                            <tr>
+                                <td class="has-text-left cname"> Boston Coding Tech</td>
+                                <td class="has-text-right cview"> 276.462 k</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                    <!-- end table -->
+                </div>
+            </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- section for the chart -->
+  <section class="section section-chard">
+      <div class="container">
+       <hr>   
+      </div>
+      <br>
+      <div class="has-text-centered"> <strong>the chart js goes in here </strong> </div>
+  </section>  
+
+
+  <script src="./script.js"></script>
+  </body>
+</html>

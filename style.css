@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Poppins:wght@300;400&display=swap');
+
+.has-background-yellow{
+    background-color: #FFB800;
+}
+
+button{
+    min-width: 250px;
+}
+button.is-yellow{
+    border-radius: 10px;
+    border-color: #FFB800;
+    border: 3px solid #FFB800;
+}
+
+button:hover{
+    background-color: #FFB800;
+    font-weight: 600;
+}
+
+hr{
+    border: 1px solid #FFB800;
+    color: #FFB800;
+    background-color: #FFB800;
+    border-radius: 10px;
+}
+
+section.heading-section{
+    font-family: 'Montserrat', sans-serif;
+}
+
+section div {
+    font-family: 'Poppins', sans-serif;
+}
+
+section.heading-section h1{
+    border-bottom: 4px solid rgb(255, 255, 255);
+    padding-bottom: 10px;  
+}
