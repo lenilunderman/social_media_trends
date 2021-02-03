@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="//use.fontawesome.com/releases/v5.7.2/css/all.css">
     <link rel="stylesheet" href="./style.css">
+    
   </head>
   <body>
   <!-- heading section -->
@@ -26,7 +27,7 @@
                             <span class="icon">
                                 <i class="fas fa-users"></i>
                             </span>
-                            <span>Check out users </span>
+                            <span>Check other channel users </span>
                           </button>
                     </p>
                     <p class="my-3 check-views">
@@ -42,15 +43,15 @@
                             <span class="icon">
                                 <i class="fas fa-satellite-dish"></i>
                             </span>
-                            <span>Channels over 250k</span>
+                            <span>Check channels over 250k</span>
                           </button>
                     </p>
-                    <p class="my-3 calculate-view">
-                        <button class="button is-yellow is-outlined" id="calculateUser-btn">
+                    <p class="my-3 sort-view">
+                        <button class="button is-yellow is-outlined" id="sortUser-btn">
                             <span class="icon">
                                 <i class="fas fa-calculator"></i>
                             </span>
-                            <span>Calculate all viewership</span>
+                            <span> Sort Channels by Views </span>
                           </button>
                     </p>
                 </div>
@@ -63,7 +64,7 @@
                         <thead>
                             <tr">
                               <th title="Channel Name" class="has-text-left"> Channel Name </th>
-                              <th title="View per week" class="has-text-right"> View per week </th>
+                              <th title="View per week" class="has-text-right"> Views per week </th>
                             </tr>
                         </thead>
                         <tbody id="body-table">
@@ -81,11 +82,13 @@
   <section class="section section-chard">
       <div class="container">
        <hr>   
-      </div>
-      <br>
-      <div class="has-text-centered"> <strong>the chart js goes in here </strong> </div>
-  </section>  
-
+      </div> 
+  </section>
+  <!-- chart -->
+  <div class="has-text-centered">
+    <script src="./chart.js"></script>
+    <canvas id="myChart" width="400" height="60"></canvas> 
+</div>
 
   <script src="./script.js"></script>
   </body>
