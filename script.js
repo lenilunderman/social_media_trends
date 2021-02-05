@@ -8,11 +8,12 @@ const sortChannelUser = document.getElementById('sortUser-btn')
 // DOM elements for the chart js
 let ctx = document.getElementById('myChart')
 
-
 // the place where all the users will be stored
 let usersList = [];
 let usersListShallow = []
-
+let usersTrendingshallow = []
+let user250kShallow = []
+let userSortViewShallow = []
 
 // Function to fetch the data for the API
 async function fetchUserData(){
@@ -33,15 +34,12 @@ async function fetchUserData(){
 
 // Function to add the data to the array
 function addData(obj) {
-    // create an shallow array 
-    console.log('shallow before: ', usersList );
-    
+  
     // push the data to the array outside the function
     usersList.push(obj)
     
     // create a shallow copy of the array to be passed to the chart
     usersListShallow = [...usersList]
-    console.log('shallow after: ', usersList );
 
     // update the DOM with the information
     updateDOM()
@@ -51,15 +49,14 @@ function addData(obj) {
 }
 
 
-
 // Function to update the chart with the right information
-function updateChart(chartData) {
+function updateChart(dataProvided = chartData) {
     
     // create the variable to hold the value
     const arrayUusers = []
     const arraySocials = []
 
-    chartData.forEach(item => {
+    dataProvided.forEach(item => {
 
         // push the information for the correct array
         arrayUusers.push(item.name)
@@ -89,7 +86,7 @@ function updateChart(chartData) {
                     'rgba(153, 102, 255, 1)',
                     'rgba(255, 159, 64, 1)'
                 ],
-                borderWidth: 1
+                borderWidth: 2
             }]
         },
         options: {
@@ -127,32 +124,37 @@ function getnewTrends() {
         // get the all the users, than set the social to a new value.
         return {...user, social: user.social * 1.5 }
     })
-
+    usersTrendingshallow = [...usersList]
     // update the DOM with the new information
-    updateDOM()
     
+    updateDOM()
+    updateChart(chartData = usersTrendingshallow)
+  
+}
+
+// Function that will filter everything inside the object based on an condition user.social > 250
+function over250kUserFilter() {
+    usersList = usersList.filter( user => user.social > 250)
+    user250kShallow = [...usersList]
+    
+    updateDOM()
+    updateChart(providedData = user250kShallow)
 }
 
 // Function that will sort all the users based on the number of views
 function sortChannelView() {
     // sort top to bottom
     usersList.sort((a,b) => b.social - a.social)
+    userSortViewShallow = [...usersList]
     updateDOM()
+    updateChart(providedData = userSortViewShallow)
 }
-
-// Function that will filter everything inside the object based on an condition user.social > 250
-function over250kUserFilter() {
-    usersList = usersList.filter( user => user.social > 250)
-    updateDOM()
-}
-
 
 // Events for tthe application
 addUser.addEventListener('click', fetchUserData)
 multipleUser.addEventListener('click', getnewTrends)
 sortChannelUser.addEventListener('click', sortChannelView)
 over250kUser.addEventListener('click', over250kUserFilter)
-
 
 
 // Chart to load in case the data is empty...
